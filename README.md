@@ -18,6 +18,11 @@
       * Feedbacks
 <!--te-->
 
-<h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/banner.png" />
-</h1>
+  <img alt="capa" src="./git/img/10.png" />
+
+<h2>Autor</h2>
+<img style="border-radius: 50%;" src="https://marketingteam.com.br/wp-content/uploads/2022/09/1626953614726-1.webp" width="100px;" alt=""/>
+
+<h3>Lucas Macedo</h3>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas%20Macedo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-macedo-aa503152/)](https://www.linkedin.com/in/lucas-macedo-aa503152/) 
