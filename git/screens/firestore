@@ -1,0 +1,37 @@
+    // Dados do usuário no Firestore
+    const [data, setData] = useState([]);
+    const getUsers = () => {
+      firestore()
+      .collection("users")
+      //.where("email", "==", user.email)
+      .get()
+      .then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          console.log("User not found")
+          return;
+        } 
+        const usuario = querySnapshot.docs[0].data();
+
+        // Imprime os dados do usuário na tela
+        setData(usuario);
+        //console.log(x)
+      }) 
+    .catch((error) => console.log(error));
+    }
+    
+
+    // useEffect
+    useEffect(() => {
+      
+      // OBS: Impede que o usuário volte após o término do loading
+      BackHandler.addEventListener('hardwareBackPress', () => {
+        return true
+      });
+
+      // Buscar dados Firestore
+      getUsers();
+
+      const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+      return subscriber; // unsubscribe on unmount
+      
+    }, [])
