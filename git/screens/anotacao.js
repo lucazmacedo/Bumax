@@ -36,9 +36,13 @@
       
     }, [])
     
+    <Text style={{ paddingLeft: 30, fontSize: 30, fontWeight: 'bold', color: '#303030'}}>Seja bem-vindo { data.nome }!</Text>
     
     
-    ////
+    /////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [nome, setNome] = useState('');
@@ -61,3 +65,10 @@
         .then(() => auth().signInWithEmailAndPassword(email, password))
         .catch((error) => console.log(error));
     }
+
+          <TextInput  placeholder="Nome" onChangeText={setNome} />
+          <TextInput  placeholder="Sobrenome" onChangeText={setSobrenome} />
+          <TextInput  placeholder="Profissão" onChangeText={setProfissao} />
+          <TextInput  placeholder="E-mail" onChangeText={setEmail} />
+          <TextInput  placeholder="Senha" secureTextEntry onChangeText={setPassword} />
+          <Button title="Criar conta" onPress={handleNewAccount} />
