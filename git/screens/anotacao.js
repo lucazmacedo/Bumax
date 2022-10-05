@@ -35,3 +35,29 @@
       return subscriber; // unsubscribe on unmount
       
     }, [])
+    
+    
+    
+    ////
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [nome, setNome] = useState('');
+    const [sobrenome, setSobrenome] = useState('');
+    const [profissao, setProfissao] = useState('');
+
+
+  
+    function handleNewAccount() {
+        auth().createUserWithEmailAndPassword(email, password)
+
+        firestore().collection('users')
+        .add({
+          nome,
+          sobrenome,
+          profissao,
+          email,
+        })
+        .then(() => Alert.alert("Conta criada com sucesso"))
+        .then(() => auth().signInWithEmailAndPassword(email, password))
+        .catch((error) => console.log(error));
+    }
